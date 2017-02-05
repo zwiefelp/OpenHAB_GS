@@ -1,0 +1,67 @@
+sitemap system label="OpenHAB System" {
+
+	
+	Frame label="Wetter" {
+		Text item=Netatmo_Temp_Indoor
+		Text item=Netatmo_Temp_Outdoor
+		Text item=Sunrise_Time
+        Text item=Sunset_Time
+		Group item=astro
+	}
+	
+    Frame label="Wohnung" {		
+        Group item=gBW
+        Group item=gLichter
+		Group item=gLightify		
+    }
+		    
+    Frame label="Radio" {
+		Switch item=RadioOnOff mappings=[ON="EinAus"]		
+		Switch item=RadioSource mappings=[ON="Aux", OFF="Tuner"]		
+		Switch item=RadioVol mappings=[ON="Vol+", OFF="Vol-"]
+		Switch item=Radio label="Radio Status"
+	}
+    
+    Frame label="Netatmo Innen" {
+        Text item=Netatmo_Temp_Indoor label="Temperatur"		
+        Text item=Netatmo_Hum_Indoor label="Luftfeuchtigkeit"	
+        Text item=Netatmo_Press_Indoor	
+        Text item=Netatmo_Noise_Indoor
+        Text item=Netatmo_CO2_Indoor
+    }
+	
+    Frame label="Netatmo Aussen" {
+        Text item=Netatmo_Temp_Outdoor label="Temperatur"
+        Text item=Netatmo_Hum_Outdoor label="Luftfeuchtigkeit"
+        Text item=Netatmo_Bat_Outdoor
+        Text item=Netatmo_Sig_Outdoor
+    }
+	
+    Frame label="Netatmo Graphs" {
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Temp_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Hum_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+		Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Temp_Outdoor&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Hum_Outdoor&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_CO2_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Press_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+        
+        /*
+        Chart item=gNetatmoTemp label="Netatmo Temperatur" service="rrd4j" period=D
+        Chart item=gNetatmoHum label="Netatmo Luftfeuchte" service="rrd4j" period=D
+        Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="rrd4j" period=D
+        Chart item=Netatmo_Press_Indoor label="Netatmo Luftdruck" service="rrd4j" period=D
+        Chart item=Netatmo_Noise_Indoor label="Netatmo Lautstärke Innen" service="rrd4j" period=D
+		
+        Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="rrd4j" period=D
+		Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="rrd4j" period=D
+		Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="rrd4j" period=D
+		Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="rrd4j" period=D
+        */       
+    }
+	
+	Frame label="Network" {
+        Text item=mqttconf
+		Text item=rfswitches
+    }
+}

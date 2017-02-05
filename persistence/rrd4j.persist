@@ -1,0 +1,18 @@
+// Persistence strategies have a name and a definition and are referred to in the "Items" section
+
+Strategies {
+   everyMinute  : "0 * * * * ?"
+   everyHour    : "0 0 * * * ?"
+   everyDay     : "0 0 0 * * ?"
+   default = everyChange
+}
+  
+Items {
+   Netatmo_Temp_Indoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_Hum_Indoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_Noise_Indoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_Press_Indoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_CO2_Indoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_Temp_Outdoor : strategy = everyMinute, restoreOnStartup
+   Netatmo_Hum_Outdoor : strategy = everyMinute, restoreOnStartup
+}

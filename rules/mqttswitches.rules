@@ -1,0 +1,59 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+import.org.joda.time.*
+import java.util.concurrent.locks.ReentrantLock
+
+var java.util.concurrent.locks.ReentrantLock lock  = new java.util.concurrent.locks.ReentrantLock()
+
+rule "MQTTSWITCHES"
+  when 
+    Item mqttswitches received update
+  then	
+    if (lock.tryLock()) {
+	try {
+
+	var String msg = ""
+	var String item = ""
+	
+	msg = (mqttswitches.state as StringType).toString
+    	msg = transform("MAP","mqttswitches.map",msg)
+    
+	if (msg != "" && msg.substring(0,7) != "UNKNOWN" ) {
+        
+        	var itm = msg.split("\:").get(0)
+        	var cmd = msg.split("\:").get(1)
+        
+		if (itm != null && cmd != null) {
+	        	logInfo("MQTTSWITCHES", "Received: " + itm + " - " + cmd)
+	
+			if ( cmd == "ON" ) {
+			    sendCommand(itm, "ON")
+			}
+
+			if (cmd == "OFF" ) {
+			    sendCommand(itm, "OFF")
+			}
+
+			if (cmd == "TOGGLE" ) {
+			    val i = gAll.members.filter(s | s.name == itm).map[it].head
+			    if (i.state == OFF) {
+				sendCommand(itm, "ON")
+			    } else {
+				sendCommand(itm, "OFF")
+			    }
+			}
+		}
+	}
+
+	} catch(Exception e) {
+	    logInfo("MQTTSWITCHES","Exception Caught: " + e.getMessage())
+
+	} finally {			
+	    lock.unlock()
+	}
+    } else {
+	logInfo("MQTTSWITCHES","Event Locked! Exiting")
+    }
+	
+  end

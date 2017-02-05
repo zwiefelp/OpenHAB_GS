@@ -1,0 +1,43 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+import.org.joda.time.*
+import java.util.List
+import java.util.ArrayList
+import java.io.File
+
+rule "mqtt"
+  when 
+    Item mqttconf received update
+  then
+  	var String msg = ""
+  	var String topic = "/openhab/configuration"
+  	var List<String> temp
+
+  	logInfo("mqtt","Event Started")
+
+  	msg = (mqttconf.state as StringType).toString
+  	logInfo("mqtt", "Message received: " + msg)
+
+  	temp = msg.split(":")
+ 
+  	if ( temp.get(0) == "getconfig" ) {
+  		topic = "/openhab/configuration/" + temp.get(1)
+
+		val fileReader = new java.io.FileReader("/etc/openhab2/espconfig/esp" + temp.get(1) + ".conf")
+		try {
+		    val values = new java.io.BufferedReader(fileReader)
+
+		    var String line = values.readLine
+		    while (line != null) {
+		    	logInfo("mqtt","Send Data:" + line)
+		    	publish("raspi", topic, line)
+		    	line = values.readLine
+		    }    
+		} finally {
+		    try { fileReader.close() } catch (Exception e) {}
+		} 	
+  	}
+
+    logInfo("mqtt","Event Ended")
+  end

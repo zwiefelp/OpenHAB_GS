@@ -1,0 +1,285 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.types.Command 
+import org.openhab.core.types.*
+import org.openhab.core.items.GenericItem
+
+rule "Lightify_Broadcast"
+	when
+		Item Lightify_Broadcast received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 01 ON"
+			postUpdate(Lightify_Wohnzimmer,ON)
+			postUpdate(Lightify_DeckeWZ,ON)
+			postUpdate(Lightify_Decke01,ON)
+			postUpdate(Lightify_Decke02,ON)
+			postUpdate(Lightify_Decke03,ON)
+			postUpdate(Lightify_StehlampeWZ,ON)
+			postUpdate(Lightify_Bett,ON)
+			
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 01 OFF"
+			postUpdate(Lightify_Wohnzimmer,OFF)
+			postUpdate(Lightify_DeckeWZ,OFF)
+			postUpdate(Lightify_Decke01,OFF)
+			postUpdate(Lightify_Decke02,OFF)
+			postUpdate(Lightify_Decke03,OFF)
+			postUpdate(Lightify_StehlampeWZ,OFF)
+			postUpdate(Lightify_Bett,OFF)
+		}
+		executeCommandLine(cmd)
+	end 
+
+rule "Lightify_DeckeWZ"
+	when
+		Item Lightify_DeckeWZ received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 02 ON"
+			postUpdate(Lightify_Decke01,ON)
+			postUpdate(Lightify_Decke02,ON)
+			postUpdate(Lightify_Decke03,ON)
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 02 OFF"
+			postUpdate(Lightify_Decke01,OFF)
+			postUpdate(Lightify_Decke02,OFF)
+			postUpdate(Lightify_Decke03,OFF)
+		}
+		executeCommandLine(cmd)
+	end
+
+rule "Lightify_Wohnzimmer"
+	when
+		Item Lightify_Wohnzimmer received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 03 ON"
+			postUpdate(Lightify_DeckeWZ,ON)
+			postUpdate(Lightify_Decke01,ON)
+			postUpdate(Lightify_Decke02,ON)
+			postUpdate(Lightify_Decke03,ON)
+			postUpdate(Lightify_StehlampeWZ,ON)
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Group 03 OFF"
+			postUpdate(Lightify_DeckeWZ,OFF)
+			postUpdate(Lightify_Decke01,OFF)
+			postUpdate(Lightify_Decke02,OFF)
+			postUpdate(Lightify_Decke03,OFF)
+			postUpdate(Lightify_StehlampeWZ,OFF)
+		}
+		executeCommandLine(cmd)
+	end
+		
+
+rule "Lightify_Decke01"
+	when
+		Item Lightify_Decke01 received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 5180da0000261884 ON"
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 5180da0000261884 OFF"
+		}
+		executeCommandLine(cmd)
+	end 
+
+rule "Lightify_Decke02"
+	when
+		Item Lightify_Decke02 received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp a6e0ca0000261884 ON"
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp a6e0ca0000261884 OFF"
+		}
+		executeCommandLine(cmd)
+	end 
+
+rule "Lightify_Decke03"
+	when
+		Item Lightify_Decke03 received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 6761da0000261884 ON"
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 6761da0000261884 OFF"
+		}
+		executeCommandLine(cmd)
+	end 
+
+
+rule "Lightify_StehlampeWZ"
+	when
+		Item Lightify_StehlampeWZ received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp e608010000261884 ON"
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp e608010000261884 OFF"
+		}
+		executeCommandLine(cmd)
+	end 
+
+rule "Lightify_Wohnzimmer_B"
+  when 
+    Item Lightify_Wohnzimmer_B received update
+  then
+    var String cmd = "/etc/openhab2/bin/lightify.sh Brightness Group 03 " + Lightify_Wohnzimmer_B.state
+    executeCommandLine(cmd)	
+  end
+
+rule "Lightify_Wohnzimmer_C"
+  when 
+    Item Lightify_Wohnzimmer_C received update
+  then    
+    var String cmd = "/etc/openhab2/bin/lightify.sh ColTemp Group 03 " + Lightify_Wohnzimmer_C.state
+    executeCommandLine(cmd) 
+  end
+
+rule DimmerWZ
+    when
+        Item DimmerWZ received command
+    then
+        var Number percent = 0
+        logInfo("DimmerWZ","Command=" + receivedCommand)
+        if (receivedCommand >= 0 && receivedCommand <= 100 ) {
+          percent = receivedCommand
+        } else {
+          percent = Lightify_Wohnzimmer_B.state
+        }
+        logInfo("DimmerWZ","State=" + percent)
+
+        if(receivedCommand==INCREASE || receivedCommand==ON ) percent = percent + 5
+        if(receivedCommand==DECREASE || receivedCommand==OFF) percent = percent - 5
+
+        if(percent<0)   percent = 0
+        if(percent>100) percent = 100
+        postUpdate(Lightify_Wohnzimmer_B, percent);
+		if (percent > 0 ) {
+			postUpdate(Lightify_Wohnzimmer,ON)
+			postUpdate(Lightify_DeckeWZ,ON)
+			postUpdate(Lightify_Decke01,ON)
+			postUpdate(Lightify_Decke02,ON)
+			postUpdate(Lightify_Decke03,ON)
+			postUpdate(Lightify_StehlampeWZ,ON)
+		} else {
+			postUpdate(Lightify_Wohnzimmer,OFF)
+			postUpdate(Lightify_DeckeWZ,OFF)
+			postUpdate(Lightify_Decke01,OFF)
+			postUpdate(Lightify_Decke02,OFF)
+			postUpdate(Lightify_Decke03,OFF)
+			postUpdate(Lightify_StehlampeWZ,OFF)
+		}
+end
+
+rule FarbeWZ
+    when
+        Item FarbeWZ received command
+    then
+        var Number percent = 0
+        logInfo("FarbeWZ","Command=" + receivedCommand)
+        if (receivedCommand >= 0 && receivedCommand <= 100 ) {
+          percent = receivedCommand
+        } else {
+          percent = Lightify_Wohnzimmer_C.state
+          percent = ((percent.doubleValue - 2000) / 45).intValue
+        }
+        logInfo("FarbeWZ","State=" + percent)
+
+        if(receivedCommand==INCREASE || receivedCommand==ON ) percent = percent + 5
+        if(receivedCommand==DECREASE || receivedCommand==OFF) percent = percent - 5
+
+        percent = percent * 45 + 2000
+        if(percent<2000) percent = 2000
+        if(percent>6500) percent = 6500
+        postUpdate(Lightify_Wohnzimmer_C, percent);
+end
+
+
+// Schlafzimmer
+
+rule "Lightify_Bett"
+	when
+		Item Lightify_Bett received command
+	then
+		var String cmd
+		if (receivedCommand == ON) {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 9588080000261884 ON"
+		} else {
+			cmd = "/etc/openhab2/bin/lightify.sh Switch Lamp 9588080000261884 OFF"
+		}
+		executeCommandLine(cmd)
+	end
+
+rule "Lightify_Bett_B"
+  when 
+    Item Lightify_Bett_B received update
+  then
+    var String cmd = "/etc/openhab2/bin/lightify.sh Brightness Group 04 " + Lightify_Bett_B.state
+    executeCommandLine(cmd) 
+  end
+
+
+rule "Lightify_Bett_C"
+  when 
+    Item Lightify_Bett_C received update
+  then    
+    var String cmd = "/etc/openhab2/bin/lightify.sh ColTemp Group 04 " + Lightify_Bett_C.state
+    executeCommandLine(cmd) 
+  end
+
+rule DimmerSZ
+    when
+        Item DimmerSZ received command
+    then
+        var Number percent = 0
+        logInfo("DimmerSZ","Command=" + receivedCommand)
+        if (receivedCommand >= 0 && receivedCommand <= 100 ) {
+          percent = receivedCommand
+        } else {
+          percent = Lightify_Bett_B.state
+        }
+        logInfo("DimmerSZ","State=" + percent)
+
+        if(receivedCommand==INCREASE || receivedCommand==ON ) percent = percent + 5
+        if(receivedCommand==DECREASE || receivedCommand==OFF) percent = percent - 5
+
+        if(percent<0)   percent = 0
+        if(percent>100) percent = 100
+        postUpdate(Lightify_Bett_B, percent);
+		if (percent > 0 ) {
+			postUpdate(Lightify_Bett,ON)
+		} else {
+			postUpdate(Lightify_Bett,OFF)
+		}
+end
+
+rule FarbeSZ
+    when
+        Item FarbeSZ received command
+    then
+        var Number percent = 0
+        logInfo("FarbeSZ","Command=" + receivedCommand)
+        if (receivedCommand >= 0 && receivedCommand <= 100 ) {
+          percent = receivedCommand
+        } else {
+          percent = Lightify_Bett_C.state
+          percent = ((percent.doubleValue - 1900) / 45).intValue
+        }
+        logInfo("FarbeSZ","State=" + percent)
+
+        if(receivedCommand==INCREASE || receivedCommand==ON ) percent = percent + 5
+        if(receivedCommand==DECREASE || receivedCommand==OFF) percent = percent - 5
+
+        percent = percent * 45 + 1900
+        if(percent<2000) percent = 1900
+        if(percent>6500) percent = 6500
+        postUpdate(Lightify_Bett_C, percent);
+end

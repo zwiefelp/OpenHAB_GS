@@ -1,0 +1,54 @@
+rule "Switches Eingang"
+  when 
+    Item TK_Eingang changed
+  then
+    if ( TK_Eingang.state == ON && Presence.state == OFF ) { 
+        sendCommand(gComingHome, ON)
+        executeCommandLine("/etc/openhab2/bin/getPhotoVZ.sh",1000)
+        sendTelegramPhoto("bot1", "http://192.168.20.17/openhab/photovz.jpg", "Jemand kommt nach Hause")
+        logInfo("Switches", "Somebody is Coming Home")
+    }
+end
+
+
+rule "Switches sendFotoVZ"
+  when 
+    Item sendFotoVZ received update
+  then
+    executeCommandLine("/etc/openhab2/bin/getPhotoVZ.sh",1000)
+    sendTelegramPhoto("bot1", "http://192.168.20.17/openhab/photovz.jpg", "Foto Vorzimmer")
+end
+
+rule "Switches sendFotoWZ"
+  when 
+    Item sendFotoWZ received update
+  then
+    executeCommandLine("/etc/openhab2/bin/getPhotoWZ.sh",2000)
+    sendTelegramPhoto("bot1", "http://192.168.20.17/openhab/photowz.jpg", "Foto Wohnzimmer")
+end
+
+
+rule "Alle Lichter"
+  when Item AlleLichter received command OFF
+then
+  sendCommand(gAlleLichter,OFF)
+end
+
+rule "gAlleLichter"
+  when Item gAlleLichter received command OFF
+then
+  if (Radio.state == ON) {
+    sendCommand(RadioOnOff, OFF)
+  }
+end 
+
+rule "Radio"
+ when 
+    Item RadioOnOff received update
+  then
+    if (Radio.state == ON) {
+	sendCommand(Radio, OFF)
+    } else {
+	sendCommand(Radio, ON)
+    }
+end 

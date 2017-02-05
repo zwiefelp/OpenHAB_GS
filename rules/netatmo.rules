@@ -1,0 +1,24 @@
+var boolean co2HighWarning = false
+var boolean co2VeryHighWarning = false
+
+rule "Monitor carbon dioxide level"
+    when
+        Item Netatmo_Indoor_CO2 changed
+    then
+        if(Netatmo_Indoor_CO2.state as Number > 800) {
+            if(co2HighWarning == false) {
+                sendTelegram("bot1",
+                         "CO2 Level ist hoch: " + Netatmo_Indoor_CO2.state + " ppm.")
+                co2HighWarning = true
+            }
+        } else if(Netatmo_Indoor_CO2.state as Number > 1000) {
+            if(co2VeryHighWarning == false) {
+                sendTelegram("bot1",
+                         "CO2 Level ist sehr hoch: " + Netatmo_Indoor_CO2.state + " ppm.")
+                co2VeryHighWarning = true
+            }
+        } else {
+            co2HighWarning = false
+            co2VeryHighWarning = false
+        }
+end

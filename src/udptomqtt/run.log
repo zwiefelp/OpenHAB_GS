@@ -1,0 +1,934 @@
+UDP to MQTT Daemon
+topic:/openhab/in/rfswitches/state 
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"MC","data":"151555"}
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"MC","data":"151555"}
+data=151555
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 151555
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B238F3"}`ýv„hýv˜]ýv
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B238F3"}
+data=45F9B238F3
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B238F3
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"MC","data":"151555"}F3"}`ýv„hýv˜]ýv
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"MC","data":"151555"}
+data=151555
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 151555
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}`ýv„hýv˜]ýv
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}`ýv„hýv˜]ýv
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010019753200"}
+data=1908260000010001010019753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010019753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"MC","data":"155555"}00010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"MC","data":"155555"}
+data=155555
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 155555
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9D38300"}010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9D38300"}
+data=A9D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9D38300"}010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9D38300"}
+data=A9D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200101"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200101"}
+data=1A9E200101
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200101
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200128"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200128"}
+data=1A9E200128
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200128
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20100"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20100"}
+data=45F9B20100
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20100
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9D38300"}
+data=A9D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9D38300"}
+data=A9D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"AD074A00"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"AD074A00"}
+data=AD074A00
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: AD074A00
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"B1D38300"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"B1D38300"}
+data=B1D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: B1D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A1228700"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A1228700"}
+data=A1228700
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A1228700
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99228700"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99228700"}
+data=99228700
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99228700
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9228700"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9228700"}
+data=A9228700
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9228700
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9707000"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9707000"}
+data=A9707000
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9707000
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200128"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200128"}
+data=1A9E200128
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200128
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20100"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20100"}
+data=45F9B20100
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20100
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200127"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200127"}
+data=1A9E200127
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200127
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"048AF939"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"048AF939"}
+data=048AF939
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 048AF939
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14F71D3A"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14F71D3A"}
+data=14F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04831C3A"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04831C3A"}
+data=04831C3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04831C3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99707000"}"}0001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99707000"}
+data=99707000
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99707000
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010042753200"}
+data=1908260000010001010042753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010042753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"148AF939"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"148AF939"}
+data=148AF939
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 148AF939
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14F71D3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14F71D3A"}
+data=14F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9707000"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9707000"}
+data=A9707000
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9707000
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"049D1B3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"049D1B3A"}
+data=049D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 049D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04331D3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04331D3A"}
+data=04331D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04331D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"149D1B3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"149D1B3A"}
+data=149D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 149D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"049D1B3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"049D1B3A"}
+data=049D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 049D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"A9D38300"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"A9D38300"}
+data=A9D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: A9D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14331D3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14331D3A"}
+data=14331D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14331D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"149D1B3A"}010001010042753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"149D1B3A"}
+data=149D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 149D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2B2BC"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2B2BC"}
+data=45F9B2B2BC
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2B2BC
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2147C"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2147C"}
+data=45F9B2147C
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2147C
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2E4C0"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2E4C0"}
+data=45F9B2E4C0
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2E4C0
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"190826000001000101003C753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"190826000001000101003C753200"}
+data=190826000001000101003C753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 190826000001000101003C753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010025753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010025753200"}
+data=1908260000010001010025753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010025753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"190826000001000101003C753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"190826000001000101003C753200"}
+data=190826000001000101003C753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 190826000001000101003C753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2FE30"}000101003C753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2FE30"}
+data=45F9B2FE30
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2FE30
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2AE52"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2AE52"}
+data=45F9B2AE52
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2AE52
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B250FF"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B250FF"}
+data=45F9B250FF
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B250FF
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2499A"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2499A"}
+data=45F9B2499A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2499A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B26DD6"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B26DD6"}
+data=45F9B26DD6
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B26DD6
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"190826000001000101002E753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"190826000001000101002E753200"}
+data=190826000001000101002E753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 190826000001000101002E753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B244AF"}000101002E753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B244AF"}
+data=45F9B244AF
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B244AF
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010043753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010043753200"}
+data=1908260000010001010043753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010043753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200127"}0001010043753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200127"}
+data=1A9E200127
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200127
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2AFC1"}0001010043753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2AFC1"}
+data=45F9B2AFC1
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2AFC1
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010034753200"}
+data=1908260000010001010034753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010034753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B21428"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B21428"}
+data=45F9B21428
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B21428
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20F0E"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20F0E"}
+data=45F9B20F0E
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20F0E
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2C943"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2C943"}
+data=45F9B2C943
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2C943
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200127"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200127"}
+data=1A9E200127
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200127
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20100"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20100"}
+data=45F9B20100
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20100
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B290B0"}0001010034753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B290B0"}
+data=45F9B290B0
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B290B0
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B29BBF"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B29BBF"}
+data=45F9B29BBF
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B29BBF
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B27F9D"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B27F9D"}
+data=45F9B27F9D
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B27F9D
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2C0C4"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2C0C4"}
+data=45F9B2C0C4
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2C0C4
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20100"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20100"}
+data=45F9B20100
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20100
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B29E3B"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B29E3B"}
+data=45F9B29E3B
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B29E3B
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2BA4F"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2BA4F"}
+data=45F9B2BA4F
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2BA4F
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010019753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010019753200"}
+data=1908260000010001010019753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010019753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B242A7"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B242A7"}
+data=45F9B242A7
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B242A7
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200101"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200101"}
+data=1A9E200101
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200101
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"190826000001000101002E753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"190826000001000101002E753200"}
+data=190826000001000101002E753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 190826000001000101002E753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B22EBC"}000101002E753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B22EBC"}
+data=45F9B22EBC
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B22EBC
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010035753200"}
+data=1908260000010001010035753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010035753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2F8CC"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2F8CC"}
+data=45F9B2F8CC
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2F8CC
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B22956"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B22956"}
+data=45F9B22956
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B22956
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200132"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200132"}
+data=1A9E200132
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200132
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200132"}0001010035753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200132"}
+data=1A9E200132
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200132
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"IR","data":"1908260000010001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"IR","data":"1908260000010001010036753200"}
+data=1908260000010001010036753200
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1908260000010001010036753200
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2BEA9"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2BEA9"}
+data=45F9B2BEA9
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2BEA9
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B28329"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B28329"}
+data=45F9B28329
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B28329
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200132"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200132"}
+data=1A9E200132
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200132
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2B906"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2B906"}
+data=45F9B2B906
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2B906
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"99D38300"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"99D38300"}
+data=99D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 99D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1A9E200132"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1A9E200132"}
+data=1A9E200132
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1A9E200132
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"9D074A00"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"9D074A00"}
+data=9D074A00
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 9D074A00
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"AD074A00"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"AD074A00"}
+data=AD074A00
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: AD074A00
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"B1D38300"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"B1D38300"}
+data=B1D38300
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: B1D38300
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B22144"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B22144"}
+data=45F9B22144
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B22144
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14F71D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14F71D3A"}
+data=14F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04F71D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04F71D3A"}
+data=04F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14F71D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14F71D3A"}
+data=14F71D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14F71D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"148AF939"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"148AF939"}
+data=148AF939
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 148AF939
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"049D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"049D1B3A"}
+data=049D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 049D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14331D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14331D3A"}
+data=14331D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14331D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"149D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"149D1B3A"}
+data=149D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 149D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"049D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"049D1B3A"}
+data=049D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 049D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"04331D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"04331D3A"}
+data=04331D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 04331D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"149D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"149D1B3A"}
+data=149D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 149D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"049D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"049D1B3A"}
+data=049D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 049D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"14331D3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"14331D3A"}
+data=14331D3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 14331D3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"CR","data":"149D1B3A"}"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"CR","data":"149D1B3A"}
+data=149D1B3A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 149D1B3A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"1B0AC401C8"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"1B0AC401C8"}
+data=1B0AC401C8
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 1B0AC401C8
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B20A8A"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B20A8A"}
+data=45F9B20A8A
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B20A8A
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B2A3C9"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B2A3C9"}
+data=45F9B2A3C9
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B2A3C9
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B24CB5"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B24CB5"}
+data=45F9B24CB5
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B24CB5
+Waiting for data...Received packet from 192.168.20.65:1902
+Data: {XC_EVT}{"type":"HM","data":"45F9B22E67"}0001010036753200"}v
+Connected to MQTT Server at 192.168.20.17:1883
+JSON={"type":"HM","data":"45F9B22E67"}
+data=45F9B22E67
+Published to MQTT Service /openhab/in/rfswitches/state with QoS1
+Sent: 45F9B22E67
+Waiting for data...

@@ -1,0 +1,137 @@
+Group gNetatmoTemp
+Group gNetatmoHum
+Group astro
+Group:Switch:OR(ON,OFF) gComingHome
+Group:Switch:OR(ON,OFF) gMobiles
+Group:Switch:OR(ON,OFF) gAufstehen
+Group gNetwork
+Group:Switch:OR(ON,OFF) gAll
+
+String rfswitches "[MAP(rfswitches.map):%s]" (gNetwork) 
+//{ udp="<[192.168.20.65:*:JSONPATH($.data)]" }
+String mqttconf "Conf InMsg: [%s]" (gNetwork) {mqtt="<[raspi:/openhab/configuration:command:default]"}
+String mqttswitches "[MAP(mqttswitches.map):%s]" (gNetwork)
+
+// Bewegungsmelder
+Group:Switch:SUM gBW "Bewegungsmelder [%d Aktiv]" <motion>
+Group:Switch:OR(ON,OFF) gBW_Schrankraum
+Switch BW_Schrankraum "BW Schrankraum" (gBW,gBW_Schrankraum)
+Group:Switch:OR(ON,OFF) gBW_Abstellraum
+Switch BW_Abstellraum "BW Abstellraum" (gBW,gBW_Abstellraum)
+Group:Switch:OR(ON,OFF) gBW_Badezimmer
+Switch BW_Badezimmer "BW Badezimmer" (gBW,gBW_Badezimmer)
+Group:Switch:OR(ON,OFF) gBW_Vorzimmer
+Switch BW_Vorzimmer "BW Vorzimmer" (gBW,gBW_Vorzimmer)
+Group:Switch:OR(ON,OFF) gBW_Klo
+Switch BW_Klo "BW Klo" (gBW,gBW_Klo)
+Group:Switch:OR(ON,OFF) gTK_Eingang
+Switch TK_Eingang "Tür Eingang" <frontdoor> (gBW,gTK_Eingang)
+
+// Fernbedienung
+Group:Switch:OR(ON,OFF) gFB_11
+Group:Switch:OR(ON,OFF) gFB_12
+Group:Switch:OR(ON,OFF) gFB_13
+Group:Switch:OR(ON,OFF) gFB_14
+Group:Switch:OR(ON,OFF) gFB_21
+Group:Switch:OR(ON,OFF) gFB_22
+Group:Switch:OR(ON,OFF) gFB_23
+Group:Switch:OR(ON,OFF) gFB_24
+Group:Switch:OR(ON,OFF) gFB_31
+Group:Switch:OR(ON,OFF) gFB_32
+Group:Switch:OR(ON,OFF) gFB_33
+Group:Switch:OR(ON,OFF) gFB_34
+Group:Switch:OR(ON,OFF) gFB_41
+Group:Switch:OR(ON,OFF) gFB_42
+Group:Switch:OR(ON,OFF) gFB_43
+Group:Switch:OR(ON,OFF) gFB_44
+Group:Switch:OR(ON,OFF) gFB_51
+Group:Switch:OR(ON,OFF) gFB_52
+Group:Switch:OR(ON,OFF) gFB_53
+
+// RF-Schalter
+Group:Switch:OR(ON,OFF) gWSW_WZ01 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_WZ02 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_SZ01 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_SZ02 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_SZ03 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_VZ01 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_VZ02 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_KU01 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_KU02 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_KU03 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_BL01 (gAll)
+Group:Switch:OR(ON,OFF) gWSW_BL02 (gAll)
+
+// Lichter
+Group:Switch:SUM gLichter "Lichter [%d Ein]" <light>
+Group:Switch:OR(ON,OFF) gAlleLichter
+Switch	All_RSL			"(4/4) Alle RSL Lampen" 	<light>	(gAlleLichter) 									{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=545455] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=545454]" }
+Switch	Licht_Couch		"(1/1) Licht Couch"		<light> (gLichter,gWSW_WZ02,gFB_11,gAlleLichter,gWSW_BL01,gAll) ["Lighting"]				{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=151555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=151554]" }
+Switch	Stehlampe_Schlafzimmer	"(1/2) Stehlampe Schlafzimmer" 	<light> (gLichter,gWSW_SZ03,gFB_12,gAufstehen,gAlleLichter) ["Lighting"]		{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=154555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=154554]" }
+Switch	Licht_Schlafzimmer	"(4/1) Licht Schlafzimmer" 	<light> (gLichter,gWSW_SZ03,gFB_41,gAlleLichter) ["Lighting"]				{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=541555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=541554]" }
+Switch	Spot_Vitrine		"(1/3) Spot Vitrine" 		<light> (gLichter,gFB_13,gAlleLichter) ["Lighting"]					{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155155] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155154]" }
+Switch	Thai_Lampe		"(3/2) Thai Lampe"		<light>	(gLichter,gFB_32,gAlleLichter) ["Lighting"]					{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=514555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=514554]" }
+Switch	Licht_Vorzimmer		"(1/4) Licht Vorzimmer"		<light> (gLichter,gWSW_VZ02,gFB_14,gBW_Vorzimmer,gComingHome,gAlleLichter) ["Lighting"] { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155455] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155454]" }
+Switch	Licht_Esstisch		"(2/1) Licht Esstisch"		<light> (gLichter,gWSW_KU02,gFB_21,gComingHome,gAufstehen,gAlleLichter) ["Lighting"] 	{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=A1707000] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=B1707000]" }
+Switch	Licht_Kueche		"(2/2) Licht Küche"		<light> (gLichter,gWSW_KU01,gFB_22,gComingHome,gAufstehen,gAlleLichter) ["Lighting"] 	{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=99707000] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=A9707000]" }
+Switch	Licht_Badezimmer	"(3/1) Licht Badezimmer" 	<light> (gLichter,gFB_31,gBW_Badezimmer,gAlleLichter) ["Lighting"]			{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=511555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=511554]" }
+Switch	Licht_Klo		"(2/3) Licht Klo" 		<light> (gLichter,gFB_23,gBW_Klo,gAlleLichter) ["Lighting"] 				{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=455155] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=455154]" }
+Switch	Licht_Abstellraum	"(2/4) Licht Abstellraum" 	<light> (gLichter,gFB_24,gBW_Abstellraum,gAlleLichter) ["Lighting"]			{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=455455] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=455454]" }
+Switch	Licht_Bar		"(3/3) Licht Bar" 		<light> (gLichter,gWSW_KU01,gWSW_KU03,gFB_33,gAlleLichter,gComingHome,gAufstehen) ["Lighting"] 	{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=515155] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=515154]" }
+Switch	Licht_Schrankraum	"(3/4) Licht Schrankraum" 	<light> (gLichter,gFB_34,gBW_Schrankraum,gAlleLichter) ["Lighting"]			{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=515455] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=515454]" }
+
+// Proxy Switches
+Switch AlleLichter "Alle Lichter"
+Switch	sendFotoWZ  "Foto senden WZ" (gNetwork)
+Switch	sendFotoVZ  "Foto senden VZ" (gNetwork)
+Switch	Presence	"Presence"	<present> (gNetwork)
+Switch	phone1	"Iphone Peter"	<present>	(gMobiles,gNetwork)
+Switch  sonoffTest "Sonoff Test Light" <light> (gLichter)
+
+// Lightify
+Group:Switch:SUM gLightify "Lightify"
+Switch	Lightify_Broadcast		"Lightify Broadcast" 			<light> (gLightify,gAlleLichter) { mqtt="<[raspi:/openhab/Lightify_Broadcast:command:default]" }
+Switch	Lightify_Decke01		"Licht WZ Decke01" 				<light> (gLightify) { mqtt="<[raspi:/openhab/Licht_Decke01:command:default]" }
+Switch	Lightify_Decke02		"Licht WZ Decke02" 				<light> (gLightify) { mqtt="<[raspi:/openhab/Licht_Decke02:command:default]" }
+Switch	Lightify_Decke03		"Licht WZ Decke03" 				<light> (gLightify) { mqtt="<[raspi:/openhab/Licht_Decke03:command:default]" }
+Switch	Lightify_StehlampeWZ	"Licht WZ Stehlampe" 			<light> (gLightify) { mqtt="<[raspi:/openhab/Licht_WZStehlampe:command:default]" }
+Switch	Lightify_DeckeWZ		"Decke Wohnzimmer" 				<light> (gLightify) { mqtt="<[raspi:/openhab/Lightify_DeckeWZ:command:default]" }
+Switch	Lightify_Wohnzimmer 	"Wohnzimmer" 					<light> (gWSW_WZ01,gLichter,gLightify) ["Lighting"] 
+Number	Lightify_Wohnzimmer_B	"Wohnzimmer Helligkeit [%d %%]" 
+Number	Lightify_Wohnzimmer_C	"Wohnzimmer Farbtemperatur [%d °]" 
+Dimmer	DimmerWZ "Dimmer Wohnzimmer" (gLightify) ["Lighting"] 
+Dimmer	FarbeWZ "Farbe Wohnzimmer" (gLightify) ["Lighting"] 
+
+Switch	Lightify_Bett	"Licht Bett" 							<light> (gLichter,gLightify,gAufstehen,gWSW_SZ02) ["Lighting"] 
+Number	Lightify_Bett_B	"Bett Helligkeit [%d %%]" 
+Number	Lightify_Bett_C	"Bett Farbtemperatur [%d]" 
+Dimmer	DimmerSZ "Dimmer Bett" (gLightify) ["Lighting"] 
+Dimmer	FarbeSZ "Farbe Bett" (gLightify) ["Lighting"] 
+
+// Netatmo
+Number Netatmo_Temp_Indoor "Temperatur Innen [%.1f °]" <temperature> (gNetatmoTemp) ["CurrentTemperature"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Temperature" }
+Number Netatmo_Hum_Indoor "Luftfeuchtigkeit Innen [%d %%]" <humidity> (gNetatmoHum) ["CurrentHumidity"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Humidity" }
+Number Netatmo_Noise_Indoor "Lautstärke [%d db]" <soundvolume> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Noise" }
+Number Netatmo_Press_Indoor "Luftdruck [%.1f mBar]" <pressure> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Pressure" }
+Number Netatmo_CO2_Indoor "Co2 [%d ppm]" <carbondioxide> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Co2" }
+
+Number Netatmo_Temp_Outdoor "Temperatur Aussen [%.1f °]" <temperature> (gNetatmoTemp) ["CurrentTemperature"]  {channel="netatmo:NAModule1:d4cf6c0a:02000017e5de:Temperature" }
+Number Netatmo_Hum_Outdoor "Luftfeuchtigkeit Aussen [%d %%]" <humidity> (gNetatmoHum) ["CurrentHumidity"] {channel="netatmo:NAModule1:d4cf6c0a:02000017e5de:Humidity" }
+Number Netatmo_Bat_Outdoor "Batterie [%d %%]" <battery> {channel="netatmo:NAModule1:d4cf6c0a:02000017e5de:BatteryVP"}
+Number Netatmo_Sig_Outdoor "Signalstärke [%d]" <qualityofservice> {channel="netatmo:NAModule1:d4cf6c0a:02000017e5de:RfStatus"}
+
+Number Sun_Elevation  "Sonnenhöhe [%.2f]" <sun> (astro) {channel="astro:sun:local:position#elevation"}
+Number Sun_Azimuth    "Sonne Azimuth [%.2f]" <sun> (astro) {channel="astro:sun:local:position#azimuth"}
+DateTime Sunrise_Time "Sonnenaufgang [%1$tH:%1$tM]" <sunrise> (astro) {channel="astro:sun:local:rise#start"}
+DateTime Sunset_Time  "Sonnenuntergang [%1$tH:%1$tM]" <sunset> (astro) {channel="astro:sun:local:set#end"}
+
+Number Moon_Elevation  "Mond Höhe [%.2f]" <moon> (astro) {channel="astro:moon:local:position#elevation"}
+Number Moon_Azimuth    "Mond Azimuth [%.2f]" <moon> (astro) {channel="astro:moon:local:position#azimuth"}
+String Moon_Phase      "Mondphase [MAP(moon.map):%s]" <moon> (astro) {channel="astro:moon:local:phase#name"}
+DateTime Moonrise_Time "Mondaufgang [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" <moon> (astro) {channel="astro:moon:local:rise#start"}
+DateTime Moonset_Time  "Monduntergang [%1$td.%1$tm.%1$tY %1$tH:%1$tM]" <moon> (astro) {channel="astro:moon:local:set#end"}
+
+Switch	RadioOnOff "Radio EinAus" <receiver> (gAufstehen) { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508BA0450009A0196009A007C009A287908BA0226000102010202020201020102010201010201010102010202010202020102010102030403&ir=01&rf=00] >[OFF:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508BA0450009A0196009A007C009A287908BA0226000102010202020201020102010201010201010102010202010202020102010102030403&ir=01&rf=00]", mqtt="<[raspi:/openhab/RadioOnOff:command:default]" }
+Switch	RadioSource	"Radio Source" <receiver> { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B90452009801980098007F0098287308B90226000102010202020201020102010201010202020102010202010101020102010102030403&ir=01&rf=00] >[OFF:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508BA0451009B0196009B007C009B284E08BA0225000102010202020201020102010201010201020202010202010201010102010102030403&ir=01&rf=00]", mqtt="<[raspi:/openhab/RadioSource:command:default]" }
+Switch	RadioVol	"Radio Volume" <soundvolume> { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B90452009A0197009A007D009A284908B90226000102010202020201020102010201010201010101010202010202020202010102030403&ir=01&rf=00] >[OFF:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B70455009A0196009A007C009A285708B70227000102010202020201020102010201010202010101010202010102020202010102030403&ir=01&rf=00]", mqtt="<[raspi:/openhab/RadioVol:command:default]" }
+Switch	Radio	"Radio"
