@@ -1,5 +1,7 @@
 Group gNetatmoTemp
 Group gNetatmoHum
+Group gInsideTemp
+Group gInsideHum
 Group astro
 Group:Switch:OR(ON,OFF) gComingHome
 Group:Switch:OR(ON,OFF) gMobiles
@@ -26,6 +28,8 @@ Group:Switch:OR(ON,OFF) gBW_Klo
 Switch BW_Klo "BW Klo" (gBW,gBW_Klo)
 Group:Switch:OR(ON,OFF) gTK_Eingang
 Switch TK_Eingang "Tür Eingang" <frontdoor> (gBW,gTK_Eingang)
+Group:Switch:OR(ON,OFF) gBW_Balkon
+Switch BW_Balkon "Tür Balkon" <frontdoor> (gBW,gBW_Balkon)
 
 // Fernbedienung
 Group:Switch:OR(ON,OFF) gFB_11
@@ -69,7 +73,7 @@ Switch	All_RSL			"(4/4) Alle RSL Lampen" 	<light>	(gAlleLichter) 									{ http
 Switch	Licht_Couch		"(1/1) Licht Couch"		<light> (gLichter,gWSW_WZ02,gFB_11,gAlleLichter,gWSW_BL01,gAll) ["Lighting"]				{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=151555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=151554]" }
 Switch	Stehlampe_Schlafzimmer	"(1/2) Stehlampe Schlafzimmer" 	<light> (gLichter,gWSW_SZ03,gFB_12,gAufstehen,gAlleLichter) ["Lighting"]		{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=154555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=154554]" }
 Switch	Licht_Schlafzimmer	"(4/1) Licht Schlafzimmer" 	<light> (gLichter,gWSW_SZ03,gFB_41,gAlleLichter) ["Lighting"]				{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=541555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=541554]" }
-Switch	Spot_Vitrine		"(1/3) Spot Vitrine" 		<light> (gLichter,gFB_13,gAlleLichter) ["Lighting"]					{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155155] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155154]" }
+Switch	Spot_Vitrine		"(1/3) Spot Vitrine" 		<light> (gLichter,gFB_13,gBW_Balkon,gAlleLichter) ["Lighting"]					{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155155] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155154]" }
 Switch	Thai_Lampe		"(3/2) Thai Lampe"		<light>	(gLichter,gFB_32,gAlleLichter) ["Lighting"]					{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=514555] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=514554]" }
 Switch	Licht_Vorzimmer		"(1/4) Licht Vorzimmer"		<light> (gLichter,gWSW_VZ02,gFB_14,gBW_Vorzimmer,gComingHome,gAlleLichter) ["Lighting"] { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155455] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=MC&data=155454]" }
 Switch	Licht_Esstisch		"(2/1) Licht Esstisch"		<light> (gLichter,gWSW_KU02,gFB_21,gComingHome,gAufstehen,gAlleLichter) ["Lighting"] 	{ http=">[ON:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=A1707000] >[OFF:GET:http://192.168.20.65/command?XC_FNC=SendSC&type=CR&data=B1707000]" }
@@ -108,9 +112,13 @@ Number	Lightify_Bett_C	"Bett Farbtemperatur [%d]"
 Dimmer	DimmerSZ "Dimmer Bett" (gLightify) ["Lighting"] 
 Dimmer	FarbeSZ "Farbe Bett" (gLightify) ["Lighting"] 
 
+//DHT22 Test
+Number dht22_temp "Temperatur [%.1f °]" <temperature> (gInsideTemp)
+Number dht22_hum  "Luftfeuchtigkeit [%.1f %%]" <humidity> (gInsideHum)
+
 // Netatmo
-Number Netatmo_Temp_Indoor "Temperatur Innen [%.1f °]" <temperature> (gNetatmoTemp) ["CurrentTemperature"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Temperature" }
-Number Netatmo_Hum_Indoor "Luftfeuchtigkeit Innen [%d %%]" <humidity> (gNetatmoHum) ["CurrentHumidity"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Humidity" }
+Number Netatmo_Temp_Indoor "Temperatur Innen [%.1f °]" <temperature> (gNetatmoTemp,gInsideTemp) ["CurrentTemperature"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Temperature" }
+Number Netatmo_Hum_Indoor "Luftfeuchtigkeit Innen [%d %%]" <humidity> (gNetatmoHum,gInsideHum) ["CurrentHumidity"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Humidity" }
 Number Netatmo_Noise_Indoor "Lautstärke [%d db]" <soundvolume> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Noise" }
 Number Netatmo_Press_Indoor "Luftdruck [%.1f mBar]" <pressure> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Pressure" }
 Number Netatmo_CO2_Indoor "Co2 [%d ppm]" <carbondioxide> {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Co2" }

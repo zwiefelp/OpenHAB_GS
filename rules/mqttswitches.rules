@@ -10,8 +10,8 @@ rule "MQTTSWITCHES"
   when 
     Item mqttswitches received update
   then	
-    if (lock.tryLock()) {
-	try {
+//    if (lock.tryLock()) {
+//	try {
 
 	var String msg = ""
 	var String item = ""
@@ -45,7 +45,7 @@ rule "MQTTSWITCHES"
 			}
 		}
 	}
-
+/*
 	} catch(Exception e) {
 	    logInfo("MQTTSWITCHES","Exception Caught: " + e.getMessage())
 
@@ -55,5 +55,5 @@ rule "MQTTSWITCHES"
     } else {
 	logInfo("MQTTSWITCHES","Event Locked! Exiting")
     }
-	
+*/	
   end

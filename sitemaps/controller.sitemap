@@ -22,6 +22,11 @@ sitemap controller label="OpenHAB Controller" {
 	Switch item=RadioVol mappings=[ON="Vol+", OFF="Vol-"]
 	Switch item=Radio label="Radio Status"
     }
+
+    Frame label="DHT22 Test" {
+	Text item=dht22_temp
+	Text item=dht22_hum
+    }
         
     Frame label="Netatmo Innen" {
         Text item=Netatmo_Temp_Indoor label="Temperatur"		
@@ -46,10 +51,10 @@ sitemap controller label="OpenHAB Controller" {
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         */
 	
-        /*
-        Chart item=gNetatmoTemp label="Netatmo Temperatur" service="rrd4j" period=D
-        Chart item=gNetatmoHum label="Netatmo Luftfeuchte" service="rrd4j" period=D
-        */
+        
+        Chart item=dht22_temp label="Innen Temperatur" service="jdbc" period=W
+        Chart item=dht22_hum label="Innen Luftfeuchte" service="jdbc" period=W
+        
 	
 	Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="rrd4j" period=W
 	Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="rrd4j" period=W
