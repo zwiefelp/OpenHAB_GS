@@ -15,4 +15,9 @@ Items {
    Netatmo_CO2_Indoor : strategy = everyMinute, restoreOnStartup
    Netatmo_Temp_Outdoor : strategy = everyMinute, restoreOnStartup
    Netatmo_Hum_Outdoor : strategy = everyMinute, restoreOnStartup
+   dht22_temp : strategy = everyMinute, restoreOnStartup
+   dht22_hum : strategy = everyMinute, restoreOnStartup
+   schlafzimmer_tmp : strategy = everyMinute, restoreOnStartup
+   schlafzimmer_hum : strategy = everyMinute, restoreOnStartup
+
 }

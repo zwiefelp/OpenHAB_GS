@@ -5,7 +5,7 @@ rule "Switches Eingang"
     if ( TK_Eingang.state == ON && Presence.state == OFF ) { 
         sendCommand(gComingHome, ON)
         executeCommandLine("/etc/openhab2/bin/getPhotoVZ.sh",1000)
-        sendTelegramPhoto("bot1", "http://192.168.20.17/openhab/photovz.jpg", "Jemand kommt nach Hause")
+        sendTelegramPhoto("bot1", "http://192.168.20.17/openhab/photovz.jpg", "Die Eingangstür wurde geöffnet!")
         logInfo("Switches", "Somebody is Coming Home")
     }
 end

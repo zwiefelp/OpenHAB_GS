@@ -25,13 +25,15 @@ rule "RFSWITCHES"
         	var cmd = msg.split("\:").get(1)
         
 		if (itm != null && cmd != null) {
-	        	logInfo("RFSWITCHES", "Received: " + itm + " - " + cmd)
+	        	logInfo("RFSWITCHES", "Received: " + itm + " - |" + cmd + "|")
 	
-			if ( cmd == "ON" ) {
+			if ( cmd.substring(0,2) == "ON" ) {
+			    logInfo("RFSWITCHES", "sendCommand(" + itm + ",ON)"
 			    sendCommand(itm, "ON")
 			}
 
 			if (cmd == "OFF" ) {
+			    logInfo("RFSWITCHES", "sendCommand(" + itm + ",OFF)"
 			    sendCommand(itm, "OFF")
 			}
 
@@ -47,13 +49,13 @@ rule "RFSWITCHES"
 	}
 
 	} catch(Exception e) {
-	    logInfo("UDP","Exception Caught: " + e.getMessage())
+	    logInfo("RFSWITCHES","Exception Caught: " + e.getMessage())
 
 	} finally {			
 	    lock.unlock()
 	}
     } else {
-	logInfo("UDP","UDP Event Locked! Exiting")
+	logInfo("RFSWITCHES","RFSWITCHES Event Locked! Exiting")
     }
 	
   end

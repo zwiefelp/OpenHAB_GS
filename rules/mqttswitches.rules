@@ -38,8 +38,10 @@ rule "MQTTSWITCHES"
 			if (cmd == "TOGGLE" ) {
 			    val i = gAll.members.filter(s | s.name == itm).map[it].head
 			    if (i.state == OFF) {
+				logInfo("MQTTSWITCHES", "Send: " + itm + " - ON")
 				sendCommand(itm, "ON")
 			    } else {
+				logInfo("MQTTSWITCHES", "Send: " + itm + " - OFF")	
 				sendCommand(itm, "OFF")
 			    }
 			}

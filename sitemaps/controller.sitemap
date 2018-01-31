@@ -3,6 +3,8 @@ sitemap controller label="OpenHAB Controller" {
     Frame label="Wetter" {
 	Text item=Netatmo_Temp_Indoor
         Text item=Netatmo_Temp_Outdoor
+	Text item=schlafzimmer_tmp
+	Text item=schlafzimmer_hum
 	Text item=Sunrise_Time
         Text item=Sunset_Time
 	Group item=astro
@@ -23,10 +25,13 @@ sitemap controller label="OpenHAB Controller" {
 	Switch item=Radio label="Radio Status"
     }
 
-    Frame label="DHT22 Test" {
+    Frame label="DHT22 Sensoren" {
 	Text item=dht22_temp
 	Text item=dht22_hum
+	Text item=schlafzimmer_tmp
+	Text item=schlafzimmer_hum
     }
+
         
     Frame label="Netatmo Innen" {
         Text item=Netatmo_Temp_Indoor label="Temperatur"		
@@ -43,27 +48,32 @@ sitemap controller label="OpenHAB Controller" {
     }
     
     Frame label="Netatmo Graphs" {
-	/*
-        Image url="http://localhost:8080/rrdchart.png?groups=gNetatmoTemp&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?groups=gNetatmoHum&period=W&random=1&h=300&w=800" refresh=300000
+	
+        Image url="http://localhost:8080/rrdchart.png?groups=gInsideTemp&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?groups=gInsideHum&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideTemp&period=W&random=1&h=300&w=800" refresh=300000
+        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideHum&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_CO2_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Press_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=300000
-        */
-	
-        
-        Chart item=dht22_temp label="Innen Temperatur" service="jdbc" period=W
-        Chart item=dht22_hum label="Innen Luftfeuchte" service="jdbc" period=W
         
 	
-	Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="rrd4j" period=W
-	Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="rrd4j" period=W
-	Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="rrd4j" period=W
-	Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="rrd4j" period=W
-	Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="rrd4j" period=W
-        Chart item=Netatmo_Press_Indoor label="Netatmo Luftdruck" service="rrd4j" period=W
-        Chart item=Netatmo_Noise_Indoor label="Netatmo Lautst?rke Innen" service="rrd4j" period=W
-	       
+        /*
+        Chart item=dht22_temp label="Innen Temperatur" service="jdbc" period=W refresh=300000
+        Chart item=dht22_hum label="Innen Luftfeuchte" service="jdbc" period=W refresh=300000
+
+        Chart item=schlafzimmer_tmp label="SZ Temperatur" service="jdbc" period=W refresh=300000
+        Chart item=schlafzimmer_hum label="SZ Luftfeuchte" service="jdbc" period=W refresh=300000
+        
+	
+	Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="jdbc" period=W refresh=300000
+	Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="jdbc" period=W refresh=300000
+	Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="jdbc" period=W refresh=300000
+	Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="jdbc" period=W refresh= 300000
+	Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="jdbc" period=W refresh=300000
+        Chart item=Netatmo_Press_Indoor label="Netatmo Luftdruck" service="jdbc" period=W refresh=300000
+        Chart item=Netatmo_Noise_Indoor label="Netatmo Lautst?rke Innen" service="jdbc" period=W refresh=300000
+	*/       
     }
 
 }}

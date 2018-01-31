@@ -38,6 +38,7 @@ sitemap system label="OpenHAB System" {
     }
 	
     Frame label="Netatmo Graphs" {
+    /*
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Temp_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Hum_Indoor&period=W&random=1&h=300&w=800" refresh=300000
 		Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Temp_Outdoor&period=W&random=1&h=300&w=800" refresh=300000
@@ -45,8 +46,8 @@ sitemap system label="OpenHAB System" {
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_CO2_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Press_Indoor&period=W&random=1&h=300&w=800" refresh=300000
         Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=300000
+    */    
         
-        /*
         Chart item=gNetatmoTemp label="Netatmo Temperatur" service="rrd4j" period=D
         Chart item=gNetatmoHum label="Netatmo Luftfeuchte" service="rrd4j" period=D
         Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="rrd4j" period=D
@@ -57,7 +58,7 @@ sitemap system label="OpenHAB System" {
 		Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="rrd4j" period=D
 		Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="rrd4j" period=D
 		Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="rrd4j" period=D
-        */       
+               
     }
 	
 	Frame label="Network" {
