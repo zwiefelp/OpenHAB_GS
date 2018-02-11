@@ -19,5 +19,5 @@ Items {
    dht22_hum : strategy = everyMinute, restoreOnStartup
    schlafzimmer_tmp : strategy = everyMinute, restoreOnStartup
    schlafzimmer_hum : strategy = everyMinute, restoreOnStartup
-
+   AvocadoWZ_Moist : strategy = everyMinute, restoreOnStartup
 }

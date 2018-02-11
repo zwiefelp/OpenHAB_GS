@@ -15,9 +15,9 @@ sitemap controller label="OpenHAB Controller" {
 	Group item=gLichter
 	Group item=gLightify
 	Group item=gNetwork
+	Text label="esp Devices" { Webview url="http://192.168.20.17/openhab/esp.html" height=15 }
     }
-    
-    
+        
     Frame label="Radio" {
 	Switch item=RadioOnOff mappings=[ON="EinAus"]		
 	Switch item=RadioSource mappings=[ON="Aux", OFF="Tuner"]		
@@ -25,13 +25,13 @@ sitemap controller label="OpenHAB Controller" {
 	Switch item=Radio label="Radio Status"
     }
 
-    Frame label="DHT22 Sensoren" {
+    Frame label="Sensoren" {
 	Text item=dht22_temp
 	Text item=dht22_hum
 	Text item=schlafzimmer_tmp
 	Text item=schlafzimmer_hum
+	Text item=AvocadoWZ_Moist
     }
-
         
     Frame label="Netatmo Innen" {
         Text item=Netatmo_Temp_Indoor label="Temperatur"		
@@ -40,40 +40,84 @@ sitemap controller label="OpenHAB Controller" {
         Text item=Netatmo_Noise_Indoor
         Text item=Netatmo_CO2_Indoor
     }	
+
     Frame label="Netatmo Aussen" {
         Text item=Netatmo_Temp_Outdoor label="Temperatur"
         Text item=Netatmo_Hum_Outdoor label="Luftfeuchtigkeit"
         Text item=Netatmo_Bat_Outdoor
         Text item=Netatmo_Sig_Outdoor
     }
-    
-    Frame label="Netatmo Graphs" {
-	
-        Image url="http://localhost:8080/rrdchart.png?groups=gInsideTemp&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?groups=gInsideHum&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideTemp&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideHum&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_CO2_Indoor&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Press_Indoor&period=W&random=1&h=300&w=800" refresh=300000
-        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=300000
-        
-	
-        /*
-        Chart item=dht22_temp label="Innen Temperatur" service="jdbc" period=W refresh=300000
-        Chart item=dht22_hum label="Innen Luftfeuchte" service="jdbc" period=W refresh=300000
 
-        Chart item=schlafzimmer_tmp label="SZ Temperatur" service="jdbc" period=W refresh=300000
-        Chart item=schlafzimmer_hum label="SZ Luftfeuchte" service="jdbc" period=W refresh=300000
-        
-	
-	Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="jdbc" period=W refresh=300000
-	Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="jdbc" period=W refresh=300000
-	Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="jdbc" period=W refresh=300000
-	Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="jdbc" period=W refresh= 300000
-	Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="jdbc" period=W refresh=300000
-        Chart item=Netatmo_Press_Indoor label="Netatmo Luftdruck" service="jdbc" period=W refresh=300000
-        Chart item=Netatmo_Noise_Indoor label="Netatmo Lautst?rke Innen" service="jdbc" period=W refresh=300000
-	*/       
+/*    
+    Frame label="Sensor Graphs" {
+        Image url="http://localhost:8080/rrdchart.png?groups=gInsideTemp&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?groups=gInsideHum&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideTemp&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?groups=gOutsideHum&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_CO2_Indoor&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Press_Indoor&period=W&random=1&h=300&w=800" refresh=60000
+        Image url="http://localhost:8080/rrdchart.png?items=Netatmo_Noise_Indoor&period=W&random=1&h=300&w=800" refresh=60000
+	Image url="http://localhost:8080/rrdchart.png?items=AvocadoWZ_Moist&period=W&random=1&h=300&w=800" refresh=60000	
     }
+*/
 
-}}
+    Frame label="Graphs" { 
+/*
+        Chart item=dht22_temp label="Innen Temperatur" service="jdbc" period=W refresh=60000
+        Chart item=dht22_hum label="Innen Luftfeuchte" service="jdbc" period=W refresh=60000
+        Chart item=schlafzimmer_tmp label="SZ Temperatur" service="jdbc" period=W refresh=60000
+        Chart item=schlafzimmer_hum label="SZ Luftfeuchte" service="jdbc" period=W refresh=60000
+	Chart item=Netatmo_Temp_Indoor label="Netatmo Innentemperatur" service="jdbc" period=W refresh=60000
+	Chart item=Netatmo_Temp_Outdoor label="Netatmo Aussentemperatur" service="jdbc" period=W refresh=60000
+	Chart item=Netatmo_Hum_Indoor label="Netatmo Luftfeuchte Innen" service="jdbc" period=W refresh=60000
+	Chart item=Netatmo_Hum_Outdoor label="Netatmo Luftfeuchte Aussen" service="jdbc" period=W refresh= 300000
+	Chart item=Netatmo_CO2_Indoor label="Netatmo Co2 Innen" service="jdbc" period=W refresh=60000
+        Chart item=Netatmo_Press_Indoor label="Netatmo Luftdruck" service="jdbc" period=W refresh=60000
+        Chart item=Netatmo_Noise_Indoor label="Netatmo Lautst?rke Innen" service="jdbc" period=W refresh=60000
+	Chart item=AvocadoWZ_Moist label="Avocado WZ Feuchte" service="jdbc" period=D refresh=60000
+*/
+	Switch item=chart_period label="Graph Zeitraum" mappings=[0="Tag", 1="Woche", 2="Monat", 3="Jahr"]
+
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideTemp&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideTemp&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideTemp&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideTemp&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideHum&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideHum&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideHum&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?groups=gInsideHum&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideTemp&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideTemp&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideTemp&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideTemp&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideHum&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideHum&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideHum&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?groups=gOutsideHum&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_CO2_Indoor&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_CO2_Indoor&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_CO2_Indoor&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_CO2_Indoor&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Press_Indoor&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Press_Indoor&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Press_Indoor&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Press_Indoor&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Noise_Indoor&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Noise_Indoor&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Noise_Indoor&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?items=Netatmo_Noise_Indoor&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+	Image url="http://192.168.20.17:8080/chart?items=AvocadoWZ_Moist&period=D&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==0, chart_period="Uninitializes"]
+	Image url="http://192.168.20.17:8080/chart?items=AvocadoWZ_Moist&period=2W&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==1]
+	Image url="http://192.168.20.17:8080/chart?items=AvocadoWZ_Moist&period=M&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==2]
+	Image url="http://192.168.20.17:8080/chart?items=AvocadoWZ_Moist&period=Y&random=1&h=400&w=1000" refresh=60000 visibility=[chart_period==3]
+
+
+    }
+}

@@ -122,6 +122,9 @@ Number	Lightify_Bett_C	"Bett Farbtemperatur [%d]"
 Dimmer	DimmerSZ "Dimmer Bett" (gLightify) ["Lighting"] 
 Dimmer	FarbeSZ "Farbe Bett" (gLightify) ["Lighting"] 
 
+//AvocadoWZ_Moist
+Number AvocadoWZ_Moist "Avocado WZ Feuchte [%d ‰]" <humidity>
+
 //DHT22 Test
 Number dht22_temp "Temperatur RF-Rec [%.1f °]" <temperature> (gInsideTemp)
 Number dht22_hum  "Luftfeuchtigkeit RF-Rec [%.1f %%]" <humidity> (gInsideHum)
@@ -157,3 +160,5 @@ Switch	RadioOnOff "Radio EinAus" <receiver> (gAufstehen) { http=">[ON:GET:http:/
 Switch	RadioSource	"Radio Source" <receiver> { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B90452009801980098007F0098287308B90226000102010202020201020102010201010202020102010202010101020102010102030403&ir=01&rf=00] >[OFF:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508BA0451009B0196009B007C009B284E08BA0225000102010202020201020102010201010201020202010202010201010102010102030403&ir=01&rf=00]", mqtt="<[raspi:/openhab/RadioSource:command:default]" }
 Switch	RadioVol	"Radio Volume" <soundvolume> { http=">[ON:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B90452009A0197009A007D009A284908B90226000102010202020201020102010201010201010101010202010202020202010102030403&ir=01&rf=00] >[OFF:GET:http://192.168.20.65/command?XC_FNC=Send2&code=19082600000100240508B70455009A0196009A007C009A285708B70227000102010202020201020102010201010202010101010202010102020202010102030403&ir=01&rf=00]", mqtt="<[raspi:/openhab/RadioVol:command:default]" }
 Switch	Radio	"Radio"
+
+Number chart_period "Graph Zeitraum" <group>
