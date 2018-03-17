@@ -58,6 +58,14 @@ int main(int argc, char** argv) {
         die("bind");
     }
 
+    char json[BUFLEN];
+    char *token;
+    char *search = "}";
+    char *data;
+
+    //  mqtt_broker_handle_t *broker = mqtt_connect("default_pub","127.0.0.1", 1883);
+    mqtt_broker_handle_t *broker;
+
     //keep listening for data
     while(1)
     {
@@ -74,26 +82,21 @@ int main(int argc, char** argv) {
         printf("Received packet from %s:%d\n", inet_ntoa(si_other.sin_addr), ntohs(si_other.sin_port));
         printf("Data: %s\n" , buf);
 
-        //  mqtt_broker_handle_t *broker = mqtt_connect("default_pub","127.0.0.1", 1883);
-        mqtt_broker_handle_t *broker = mqtt_connect(client_name, broker_ip_addr, broker_port);
-        if(broker == 0) {
-            puts("Failed to connect");
-            die("mqtt_connect()");
-        }
-
         snprintf(temp,recv_len + 1,"%s",buf);
-        char json[BUFLEN];
-        char *token;
-        char *search = "}";
         token = strtok(temp, search);
         token = strtok(NULL, search + 1);
         strcpy(json,token);
         printf("JSON=%s\n",json);
 
-        char *data;
         json_scanf(json, strlen(json), "{data: %Q}", &data);
         printf("data=%s\n",data);
         snprintf(msg,BUFLEN,"%s",data);
+
+	broker = mqtt_connect(client_name, broker_ip_addr, broker_port);
+        if(broker == 0) {
+	    puts("Failed to connect");
+	    die("mqtt_connect()");
+	}
 
         if(mqtt_publish(broker, topic, msg, QoS1) == -1) {
             printf("publish failed\n");

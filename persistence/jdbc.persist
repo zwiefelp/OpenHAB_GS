@@ -15,7 +15,7 @@ Strategies {
  * item (excl. the group item itself).
  */
 Items {
-    * 		: strategy = everyChange, everyDay, restoreOnStartup
+    * 		: strategy = everyChange, everyMinute, restoreOnStartup
     Avocado*	: strategy = everyChange, everyMinute, restoreOnStartup
     Netatmo* 	: strategy = everyChange, everyMinute, restoreOnStartup
 }

@@ -125,13 +125,19 @@ Dimmer	FarbeSZ "Farbe Bett" (gLightify) ["Lighting"]
 //AvocadoWZ_Moist
 Number AvocadoWZ_Moist "Avocado WZ Feuchte [%d ‰]" <humidity>
 
-//DHT22 Test
+//DHT22 RF-Rec (Test)
 Number dht22_temp "Temperatur RF-Rec [%.1f °]" <temperature> (gInsideTemp)
 Number dht22_hum  "Luftfeuchtigkeit RF-Rec [%.1f %%]" <humidity> (gInsideHum)
 
 //DHT22 Schlafzimmer
 Number schlafzimmer_tmp "Temperatur SZ [%.1f °]" <temperature> (gInsideTemp)
 Number schlafzimmer_hum  "Luftfeuchtigkeit SZ [%.1f %%]" <humidity> (gInsideHum)
+
+//DHT22 Bett
+Number bett_tmp "Temperatur Bett [%.1f °]" <temperature> (gInsideTemp)
+Number bett_hum  "Luftfeuchtigkeit Bett [%.1f %%]" <humidity> (gInsideHum)
+Number bett_bat "Batterie Bett [%d %%]" <battery>
+Number bett_vcc "VCC Bett [%.2f V]" <battery>
 
 // Netatmo
 Number Netatmo_Temp_Indoor "Temperatur Innen [%.1f °]" <temperature> (gNetatmoTemp,gInsideTemp) ["CurrentTemperature"] {channel="netatmo:NAMain:d4cf6c0a:70ee5017daac:Temperature" }
@@ -162,3 +168,5 @@ Switch	RadioVol	"Radio Volume" <soundvolume> { http=">[ON:GET:http://192.168.20.
 Switch	Radio	"Radio"
 
 Number chart_period "Graph Zeitraum" <group>
+
+Dimmer	servotest "SERVOTEST [%.1f]"

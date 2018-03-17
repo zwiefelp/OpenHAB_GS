@@ -19,5 +19,8 @@ Items {
    dht22_hum : strategy = everyMinute, restoreOnStartup
    schlafzimmer_tmp : strategy = everyMinute, restoreOnStartup
    schlafzimmer_hum : strategy = everyMinute, restoreOnStartup
+   bett_tmp : strategy = everyMinute, restoreOnStartup
+   bett_hum : strategy = everyMinute, restoreOnStartup
+   bett_bat : strategy = everyMinute, restoreOnStartup
    AvocadoWZ_Moist : strategy = everyMinute, restoreOnStartup
 }
